@@ -8,12 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = button.getAttribute('data-name');
             const price = parseInt(button.getAttribute('data-price'));
 
-            // Tambah item ke keranjang
             const listItem = document.createElement('li');
             listItem.textContent = `${name} - ${price} IDR`;
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Hapus';
+            removeButton.className = 'remove-item';
+            removeButton.addEventListener('click', () => {
+                totalPrice -= price;
+                totalPriceElement.textContent = totalPrice;
+                listItem.remove();
+            });
+
+            listItem.appendChild(removeButton);
             cartItems.appendChild(listItem);
 
-            // Update total harga
             totalPrice += price;
             totalPriceElement.textContent = totalPrice;
         });
@@ -21,12 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('checkout').addEventListener('click', () => {
         alert(`Total belanja Anda: ${totalPrice} IDR. Terima kasih!`);
-        // Reset keranjang
         cartItems.innerHTML = '';
         totalPrice = 0;
         totalPriceElement.textContent = totalPrice;
     });
 });
+
+// Service Worker registration
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js')
         .then(() => console.log('Service Worker berhasil didaftarkan!'))
