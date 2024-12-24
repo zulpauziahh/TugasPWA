@@ -27,3 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPriceElement.textContent = totalPrice;
     });
 });
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log('Service Worker berhasil didaftarkan!'))
+        .catch(err => console.error('Service Worker gagal didaftarkan:', err));
+}
