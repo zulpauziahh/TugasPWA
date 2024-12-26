@@ -1,6 +1,6 @@
 {
-    "name": "Minuman",
-    "short_name": "MinumanSegar",
+    "name": "Minuman Segar",
+    "short_name": "Minuman",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
