@@ -2,10 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f8ff; /* Warna latar belakang yang lebih menarik */
 }
 
 header {
-    background-color: #f8f9fa;
+    background-color: #007bff; /* Warna header yang lebih cerah */
+    color: white;
     text-align: center;
     padding: 20px;
 }
@@ -15,13 +17,47 @@ header {
     overflow: hidden;
 }
 
-.slider img {
-    width: 100%;
-    display: none;
+.slide {
+    display: none; /* Sembunyikan semua slide */
 }
 
-.slider img.active {
-    display: block;
+.slide.active {
+    display: block; /* Tampilkan slide aktif */
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.slider-button.left {
+    left: 10px;
+}
+
+.slider-button.right {
+    right: 10px;
 }
 
 .product-container {
@@ -31,24 +67,25 @@ header {
 }
 
 .product {
-    border: 1px solid #ddd;
+    border:  1px solid #ddd;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     text-align: center;
-    width: 150px; /* Mengubah lebar produk menjadi lebih kecil */
+    width: 200px; /* Lebar produk yang lebih besar */
 }
 
 .product img {
     width: 100%;
-    height: auto;
+    height: 150px; /* Tinggi gambar produk yang konsisten */
+    object-fit: cover; /* Memastikan gambar terpotong menjadi persegi */
 }
 
 .add-to-cart {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 8px; /* Mengurangi padding untuk tombol */
+    padding: 10px;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -60,13 +97,13 @@ header {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: #007bff; /* Warna footer yang lebih cerah */
+    color: white;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-/* Tambahan untuk memperkecil ukuran daftar minuman */
 #product-list {
     margin: 20px; /* Menambahkan margin untuk jarak */
 }
@@ -75,6 +112,11 @@ footer {
     font-size: 1.5em; /* Mengurangi ukuran font judul */
 }
 
-.product-container {
-    justify-content: space-around; /* Menyebar produk secara merata */
+#checkout-section {
+    margin-top: 20px; /* Menambahkan jarak antara daftar produk dan checkout */
+}
+
+#cart-items {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0;
 }
