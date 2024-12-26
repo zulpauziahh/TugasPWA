@@ -1,23 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Carousel
-    const slides = document.querySelectorAll('#carousel .slide');
-    let currentIndex = 0;
-
-    const showSlide = (index) => {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-    };
-
-    const nextSlide = () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    };
-
-    showSlide(currentIndex);
-    setInterval(nextSlide, 3000);
-
-    // Cart
     const cartItems = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
     let totalPrice = 0;
@@ -28,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = parseInt(button.getAttribute('data-price'));
 
             const listItem = document.createElement('li');
-            listItem.textContent = `${name} - ${price} IDR`;
+            listItem.textContent = ${name} - ${price} IDR;
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Hapus';
@@ -48,14 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('checkout').addEventListener('click', () => {
-        alert(`Total belanja Anda: ${totalPrice} IDR. Terima kasih!`);
+        alert(Total belanja Anda: ${totalPrice} IDR. Terima kasih!);
         cartItems.innerHTML = '';
         totalPrice = 0;
         totalPriceElement.textContent = totalPrice;
     });
 });
+
+// Service Worker registration
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js')
         .then(() => console.log('Service Worker berhasil didaftarkan!'))
         .catch(err => console.error('Service Worker gagal didaftarkan:', err));
-        }
+}
