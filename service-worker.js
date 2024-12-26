@@ -2,7 +2,6 @@ const CACHE_NAME = 'kasir-sepatu-v1';
 const urlsToCache = [
     './',
     './index.html',
-    './dashboard.html',
     './style.css',
     './app.js',
     './manifest.json',
