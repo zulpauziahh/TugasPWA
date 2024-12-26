@@ -4,21 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalPrice = 0;
 
     // Hero slider logic
-    const sliderImages = document.querySelectorAll('#hero-slider img');
+    const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
 
     const updateSlider = () => {
-        // Sembunyikan semua gambar
-        sliderImages.forEach((img) => {
-            img.classList.remove('active');
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
         });
-        // Tampilkan gambar saat ini
-        sliderImages[currentIndex].classList.add('active');
-        // Update index untuk gambar berikutnya
-        currentIndex = (currentIndex + 1) % sliderImages.length;
+        slides[currentIndex].classList.add('active');
     };
 
-    setInterval(updateSlider, 3000); // Ganti gambar setiap 3 detik
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }, 2000); // Ganti gambar setiap 2 detik
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    });
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
