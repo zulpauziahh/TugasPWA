@@ -3,13 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPriceElement = document.getElementById('total-price');
     let totalPrice = 0;
 
+    // Hero slider logic
+    const sliderImages = document.querySelectorAll('#hero-slider img');
+    let currentIndex = 0;
+
+    const updateSlider = () => {
+        sliderImages.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex);
+        });
+        currentIndex = (currentIndex + 1) % sliderImages.length;
+    };
+
+    setInterval(updateSlider, 3000); // Ganti gambar setiap 3 detik
+
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.getAttribute('data-name');
             const price = parseInt(button.getAttribute('data-price'));
 
             const listItem = document.createElement('li');
-            listItem.textContent = ${name} - ${price} IDR;
+            listItem.textContent = `${name} - ${price} IDR`;
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Hapus';
@@ -29,12 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('checkout').addEventListener('click', () => {
-        alert(Total belanja Anda: ${totalPrice} IDR. Terima kasih!);
+        alert(`Total belanja Anda: ${totalPrice} IDR. Terima kasih!`);
         cartItems.innerHTML = '';
         totalPrice = 0;
         totalPriceElement.textContent = totalPrice;
     });
 });
+
 
 // Service Worker registration
 if ('serviceWorker' in navigator) {
