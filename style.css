@@ -2,54 +2,44 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* Warna latar belakang yang lebih menarik */
 }
 
 header {
-    background-color: #007bff; /* Warna header yang lebih cerah */
-    color: white;
     text-align: center;
-    padding: 20px;
+    background-color: #f4f4f4;
+    padding: 10px 0;
 }
 
 .slider {
     position: relative;
+    max-width: 600px;
+    margin: 0 auto;
     overflow: hidden;
 }
 
 .slide {
-    display: none; /* Sembunyikan semua slide */
+    display: none;
+    text-align: center;
 }
 
 .slide.active {
-    display: block; /* Tampilkan slide aktif */
+    display: block;
 }
 
-.slider img {
+.slide img {
     width: 100%;
     height: auto;
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .slider-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
-    font-size: 24px;
     cursor: pointer;
     padding: 10px;
-    border-radius: 5px;
 }
 
 .slider-button.left {
@@ -62,61 +52,22 @@ header {
 
 .product-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 .product {
-    border:  1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
     text-align: center;
-    width: 200px; /* Lebar produk yang lebih besar */
 }
 
-.product img {
-    width: 100%;
-    height: 150px; /* Tinggi gambar produk yang konsisten */
-    object-fit: cover; /* Memastikan gambar terpotong menjadi persegi */
-}
-
-.add-to-cart {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.add-to-cart:hover {
-    background-color: #218838;
+#checkout-section {
+    text-align: center;
+    margin-top: 20px;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #007bff; /* Warna footer yang lebih cerah */
+    padding: 10px 0;
+    background-color: #333;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-#product-list {
-    margin: 20px; /* Menambahkan margin untuk jarak */
-}
-
-#product-list h2 {
-    font-size: 1.5em; /* Mengurangi ukuran font judul */
-}
-
-#checkout-section {
-    margin-top: 20px; /* Menambahkan jarak antara daftar produk dan checkout */
-}
-
-#cart-items {
-    list-style-type: none; /* Menghilangkan bullet points */
-    padding: 0;
 }
