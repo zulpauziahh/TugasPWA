@@ -1,76 +1,69 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cartItems = document.getElementById('cart-items');
-    const totalPriceElement = document.getElementById('total-price');
-    let totalPrice = 0;
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+let currentIndex = 0;
 
-    // Hero slider logic
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
-
-    const updateSlider = () => {
-        slides.forEach((slide) => {
-            slide.classList.remove('active');
-        });
-        slides[currentIndex].classList.add('active');
-    };
-
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
-    }, 2000); // Ganti gambar setiap 2 detik
-
-    document.getElementById('next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
+// Slider navigation
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
     });
+}
 
-    document.getElementById('prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlider();
-    });
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
 
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const name = button.getAttribute('data-name');
-            const price = parseInt(button.getAttribute('data-price'));
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
 
-            const listItem = document.createElement('li');
-            listItem.textContent = `${name} - ${price} IDR`;
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
 
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Hapus';
-            removeButton.className = 'remove-item';
-            removeButton.addEventListener('click', () => {
-                totalPrice -= price;
-                totalPriceElement.textContent = totalPrice;
-                listItem.remove();
-            });
+// Cart functionality
+const cartItems = document.getElementById('cart-items');
+const totalPriceEl = document.getElementById('total-price');
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+let cart = [];
 
-            listItem.appendChild(removeButton);
-            cartItems.appendChild(listItem);
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseInt(button.getAttribute('data-price'), 10);
 
-            totalPrice += price;
-            totalPriceElement.textContent = totalPrice;
-        });
-    });
-
-    document.getElementById('checkout').addEventListener('click', () => {
-        alert(`Total belanja Anda: ${totalPrice} IDR. Terima kasih!`);
-        cartItems.innerHTML = '';
-        totalPrice = 0;
-        totalPriceElement.textContent = totalPrice;
+        cart.push({ name, price });
+        updateCart();
     });
 });
 
-// Service Worker registration
+function updateCart() {
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price} IDR`;
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+
+    totalPriceEl.textContent = total;
+}
+
+document.getElementById('checkout').addEventListener('click', () => {
+    alert(`Total Harga: ${totalPriceEl.textContent} IDR`);
+    cart = [];
+    updateCart();
+});
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(registration => {
-                console.log('Service Worker terdaftar dengan sukses:', registration);
-            })
-            .catch(error => {
-                console.error('Service Worker gagal didaftarkan:', error);
-            });
-    });
-});
+    navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+            console.error('Service Worker registration failed:', error);
+        });
+}
