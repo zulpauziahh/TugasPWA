@@ -36,8 +36,7 @@ header {
     margin: 10px;
     padding: 10px;
     text-align: center;
- ```css
-    width: 200px;
+    width: 150px; /* Mengubah lebar produk menjadi lebih kecil */
 }
 
 .product img {
@@ -49,7 +48,7 @@ header {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 8px; /* Mengurangi padding untuk tombol */
     cursor: pointer;
     border-radius: 5px;
 }
@@ -65,4 +64,17 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Tambahan untuk memperkecil ukuran daftar minuman */
+#product-list {
+    margin: 20px; /* Menambahkan margin untuk jarak */
+}
+
+#product-list h2 {
+    font-size: 1.5em; /* Mengurangi ukuran font judul */
+}
+
+.product-container {
+    justify-content: space-around; /* Menyebar produk secara merata */
 }
