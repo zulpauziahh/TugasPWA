@@ -8,9 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     const updateSlider = () => {
-        sliderImages.forEach((img, index) => {
-            img.classList.toggle('active', index === currentIndex);
+        // Sembunyikan semua gambar
+        sliderImages.forEach((img) => {
+            img.classList.remove('active');
         });
+        // Tampilkan gambar saat ini
+        sliderImages[currentIndex].classList.add('active');
+        // Update index untuk gambar berikutnya
         currentIndex = (currentIndex + 1) % sliderImages.length;
     };
 
