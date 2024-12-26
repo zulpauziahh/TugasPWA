@@ -1,18 +1,18 @@
 {
-    "name": "Kasir Pembelian Sepatu",
-    "short_name": "KasirSepatu",
+    "name": "Minuman",
+    "short_name": "MinumanSegar",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#317EFB",
     "icons": [
         {
-            "src": "./img/icon-192.png",
+            "src": "https://id.images.search.yahoo.com/images/view;_ylt=AwrPrWvMwmxnsRAMTsTNQwx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzMwY2Y4MTgzNjJkZTkwZjI3OGE2ZTUwODA5YjM2YmY3BGdwb3MDMTAEaXQDYmluZw--?back=https%3A%2F%2Fid.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dicon%2Bminuman%2Bmangkok%26ei%3DUTF-8%26type%3DE211ID1357G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D10&w=900&h=512&imgurl=e7.pngegg.com%2Fpngimages%2F743%2F250%2Fpng-clipart-take-out-food-restaurant-computer-icons-drink-drink-food-eating.png&rurl=https%3A%2F%2Fwww.pngegg.com%2Fid%2Fpng-colan&size=6KB&p=icon+minuman+mangkok&oid=30cf818362de90f278a6e50809b36bf7&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Makanan+dibawa+pulang+Restoran+Ikon+Komputer+Minuman%2C+minuman%2C+makanan+...&b=0&ni=140&no=10&ts=&tab=organic&sigr=Ty109ntXWNCO&sigb=uIfg3skSmsYh&sigi=fWMnSWaphgXj&sigt=0O9GcQZzZ88C&.crumb=cXC05tSoCbe&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211ID1357G0",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "./img/icon-512.png",
+            "src": "https://id.images.search.yahoo.com/images/view;_ylt=AwrPrWvMwmxnsRAMcMTNQwx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2FiYmU4YzcwZjY1MTNjNzc2ZjI0OTIwMjc5MTQ1MjBiBGdwb3MDNDQEaXQDYmluZw--?back=https%3A%2F%2Fid.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dicon%2Bminuman%2Bmangkok%26ei%3DUTF-8%26type%3DE211ID1357G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D44&w=320&h=395&imgurl=cdn.kibrispdr.org%2Fdata%2F637%2Ficon-minuman-png-15.png&rurl=https%3A%2F%2Fwww.kibrispdr.org%2Ficon-minuman-png.html&size=37KB&p=icon+minuman+mangkok&oid=abbe8c70f6513c776f2492027914520b&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Icon+Minuman+Png&b=0&ni=140&no=44&ts=&tab=organic&sigr=vAnL9vEV4aai&sigb=OILnk_jEoQLm&sigi=9Urkv2NEV113&sigt=gYFfNwq7DuHf&.crumb=cXC05tSoCbe&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211ID1357G0",
             "sizes": "512x512",
             "type": "image/png"
         }
