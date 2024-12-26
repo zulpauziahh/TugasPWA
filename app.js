@@ -49,10 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // Service Worker registration
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-        .then(() => console.log('Service Worker berhasil didaftarkan!'))
-        .catch(err => console.error('Service Worker gagal didaftarkan:', err));
-}
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(registration => {
+                console.log('Service Worker terdaftar dengan sukses:', registration);
+            })
+            .catch(error => {
+                console.error('Service Worker gagal didaftarkan:', error);
+            });
+    });
+});
