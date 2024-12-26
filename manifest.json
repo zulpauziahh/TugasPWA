@@ -7,14 +7,14 @@
     "theme_color": "#317EFB",
     "icons": [
         {
-            "src": "./https://id.images.search.yahoo.com/images/view;_ylt=AwrPrWug02xn7zAPUmLNQwx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzE2NDY0ZWUzNjUzODRmZjA5M2UxMjY2YTQxOTQ0OTM4BGdwb3MDMTAEaXQDYmluZw--?back=https%3A%2F%2Fid.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dicon%2Bminuman%26ei%3DUTF-8%26type%3DE211ID1357G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D10&w=880&h=1060&imgurl=www.pinclipart.com%2Fpicdir%2Fmiddle%2F71-710082_tropical-drink-booze-alcohol-cocktail-lime-comments-icon.png&rurl=https%3A%2F%2Ftrukterkenal.blogspot.com%2F2021%2F12%2F15-icon-minuman-terpopuler.html&size=156KB&p=icon+minuman&oid=16464ee365384ff093e1266a41944938&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=15%2B+Icon+Minuman%2C+Terpopuler%21&b=0&ni=140&no=10&ts=&tab=organic&sigr=_dmOPqfLP5r2&sigb=Ia0bU71SyGKI&sigi=ppuCjKjZaMEi&sigt=IFORp4bp.0iw&.crumb=cXC05tSoCbe&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211ID1357G0",
+            "src": "icon-192x192.png",
             "sizes": "192x192",
-            "type": "image/jpeg"
+            "type": "image/png"
         },
         {
-            "src": "./https://id.images.search.yahoo.com/images/view;_ylt=AwrPrWug02xn7zAPg2LNQwx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzExMDk4YWJlMzI2MTdjMDlmMGI5MzBhNzNlMzJiMzQ0BGdwb3MDNTkEaXQDYmluZw--?back=https%3A%2F%2Fid.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dicon%2Bminuman%26ei%3DUTF-8%26type%3DE211ID1357G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D59&w=512&h=512&imgurl=cdn.kibrispdr.org%2Fdata%2F637%2Ficon-minuman-png-45.jpg&rurl=https%3A%2F%2Fwww.kibrispdr.org%2Ficon-minuman-png.html&size=12KB&p=icon+minuman&oid=11098abe32617c09f0b930a73e32b344&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Icon+Minuman+Png&b=0&ni=140&no=59&ts=&tab=organic&sigr=vAnL9vEV4aai&sigb=_4CRO6NxK9IJ&sigi=8Ur9bnFLSdvw&sigt=gYFfNwq7DuHf&.crumb=cXC05tSoCbe&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211ID1357G0",
+            "src": "icon-512x512.png",
             "sizes": "512x512",
-            "type": "image/jpeg"
+            "type": "image/png"
         }
     ]
 }
