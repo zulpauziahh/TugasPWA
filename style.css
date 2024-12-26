@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Body and General Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -9,51 +9,49 @@ body {
 header {
     background: #222;
     color: white;
-    padding: 15px 0;
     text-align: center;
+    padding-bottom: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-header nav {
-    margin-top: 10px;
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 15px 0;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Carousel */
-#carousel {
+#hero-slider {
     position: relative;
     width: 100%;
-    max-height: 400px;
+    height: 300px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.slide {
+#hero-slider img {
     position: absolute;
     width: 100%;
-    transition: opacity 1s ease-in-out;
+    height: 100%;
+    object-fit: cover;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.slide img {
-    width: 100%;
-    height: auto;
-}
-
-.slide.active {
+#hero-slider img.active {
     opacity: 1;
 }
 
-/* Product Section */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -65,13 +63,27 @@ header nav a:hover {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
     text-align: center;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
 }
 
 .product img {
     max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
     border-radius: 8px;
+}
+
+.product span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 button {
@@ -81,6 +93,7 @@ button {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 button:hover {
@@ -91,13 +104,43 @@ button:hover {
     margin-top: 30px;
 }
 
-/* Footer */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-item {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background: #cc0000;
+}
+
 footer {
     text-align: center;
     padding: 15px 0;
     background: #222;
     color: white;
+    margin-top: 30px;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
