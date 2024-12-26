@@ -8,37 +8,11 @@
     <title>Kasir Pembelian Sepatu</title>
 </head>
 <body>
-
     <header>
         <h1>Kasir Pembelian Sepatu</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#cart">Pesanan</a>
-            <a href="#dashboard">Dashboard</a>
-        </nav>
     </header>
-
     <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h2>Selamat Datang di Kasir Pembelian Sepatu</h2>
-            <!-- Carousel -->
-            <div id="carousel">
-                <div class="slide">
-                    <img src="./img/sepatuA.jpg" alt="Sepatu A">
-                </div>
-                <div class="slide">
-                    <img src="./img/sepatuB.jpg" alt="Sepatu B">
-                </div>
-                <div class="slide">
-                    <img src="./img/sepatuC.jpg" alt="Sepatu C">
-                </div>
-            </div>
-        </section>
-
-        <!-- Menu Section -->
-        <section id="menu">
+        <section id="product-list">
             <h2>Daftar Sepatu</h2>
             <div class="product-container">
                 <div class="product">
@@ -58,46 +32,16 @@
                 </div>
             </div>
         </section>
-
-        <!-- Cart Section -->
         <section id="cart">
             <h2>Keranjang Belanja</h2>
             <ul id="cart-items"></ul>
             <p>Total: <span id="total-price">0</span> IDR</p>
             <button id="checkout">Checkout</button>
         </section>
-
-        <!-- Dashboard Section -->
-        <section id="dashboard">
-            <h2>Statistik Penjualan</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produk</th>
-                        <th>Jumlah Terjual</th>
-                        <th>Pendapatan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Sepatu A</td>
-                        <td>10</td>
-                        <td>5,000,000 IDR</td>
-                    </tr>
-                    <tr>
-                        <td>Sepatu B</td>
-                        <td>5</td>
-                        <td>3,750,000 IDR</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </main>
-
     <footer>
         <p>&copy; 2024 Kasir Pembelian Sepatu</p>
     </footer>
-
     <script src="app.js"></script>
 </body>
 </html>
