@@ -1,9 +1,9 @@
+// Hero Slider
 const slides = document.querySelectorAll('.slide');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 let currentIndex = 0;
 
-// Slider navigation
 function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
@@ -20,10 +20,12 @@ function prevSlide() {
     showSlide(currentIndex);
 }
 
-prevButton.addEventListener('click', prevSlide);
 nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
 
-// Cart functionality
+setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+
+// Cart Functionality
 const cartItems = document.getElementById('cart-items');
 const totalPriceEl = document.getElementById('total-price');
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -58,6 +60,16 @@ document.getElementById('checkout').addEventListener('click', () => {
     cart = [];
     updateCart();
 });
+
+// Like Button Functionality
+const likeButton = document.getElementById('like-button');
+likeButton.addEventListener('click', () => {
+    likeButton.textContent = '❤️ Liked';
+    likeButton.disabled = true;
+    alert('Terima kasih telah menyukai halaman kami!');
+});
+
+// Service Worker
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
         .then(registration => {
