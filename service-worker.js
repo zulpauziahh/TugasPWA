@@ -7,11 +7,11 @@ const urlsToCache = [
     './manifest.json',
     'https://allofresh.id/blog/wp-content/uploads/2023/04/resep-es-timun-suri-1-1-1.jpg',
     'https://www.wandercooks.com/wp-content/uploads/2021/04/malaysian-pulled-tea-teh-tarik-2.jpg',
-    'https://factsofindonesia.com/wp-content/uploads/2021/07/es-pisang-ijo.jpg', // Updated to .jpg
-    'https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/02/23/kopi-rempah-3400559857.jpg', // Assuming the original was .jpg
+    'https://factsofindonesia.com/wp-content/uploads/2021/07/es-pisang-ijo.jpg', 
+    'https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/02/23/kopi-rempah-3400559857.jpg', 
     'https://serikatnews.com/wp-content/uploads/2023/01/Bajigur.jpg',
     'https://assets.ladiestory.id/gallery/171246131220600903-ilustrasi.jpg',
-    'https://4.bp.blogspot.com/-myKGjl26ww0/Vk79adfUU1I/AAAAAAAAAZM/KJL6XOhSnqI/s1600/es%2Bteh%2Blemon.jpg', // Changed to .jpg
+    'https://4.bp.blogspot.com/-myKGjl26ww0/Vk79adfUU1I/AAAAAAAAAZM/KJL6XOhSnqI/s1600/es%2Bteh%2Blemon.jpg', 
     'https://img.herstory.co.id/articles/archive_20220826/kopi-20220826-125544.jpg'
 ];
 
