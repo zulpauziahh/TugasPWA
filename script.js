@@ -44,23 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateCart() {
-        cartItems.innerHTML = '';
+        cartItems.innerHTML = '';  // Clear current cart list
         let total = 0;
 
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price} IDR`;
+            li.textContent = `${item.name} - ${item.price.toLocaleString('id-ID')} IDR`;
             cartItems.appendChild(li);
             total += item.price;
         });
 
-        totalPriceEl.textContent = total;
+        totalPriceEl.textContent = total.toLocaleString('id-ID');  // Format total price as IDR
     }
 
     document.getElementById('checkout').addEventListener('click', () => {
-        alert(`Total Harga: ${totalPriceEl.textContent} IDR`);
-        cart = [];
-        updateCart();
+        if (cart.length === 0) {
+            alert('Keranjang Anda kosong!');
+        } else {
+            alert(`Total Harga: ${totalPriceEl.textContent} IDR`);
+            cart = [];  // Clear the cart after checkout
+            updateCart();  // Update cart UI
+        }
     });
 
     // Service Worker registration
