@@ -60,12 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.textContent = `${item.name} - ${item.quantity} x ${item.price.toLocaleString('id-ID')} IDR`;
             
+            // Create edit button
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.classList.add('edit-item');
+            editButton.addEventListener('click', () => editItemQuantity(item));
+
             // Create remove button
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Hapus';
             removeButton.classList.add('remove-item');
             removeButton.addEventListener('click', () => removeFromCart(item.name));
 
+            li.appendChild(editButton);
             li.appendChild(removeButton);
             cartItems.appendChild(li);
             total += item.price * item.quantity;
@@ -80,6 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function removeFromCart(productName) {
         cart = cart.filter(item => item.name !== productName);  // Remove the item from cart
         updateCart();  // Update cart UI after removal
+    }
+
+    // Edit product quantity
+    function editItemQuantity(item) {
+        const newQuantity = prompt('Masukkan jumlah baru:', item.quantity);
+        const quantity = parseInt(newQuantity, 10);
+
+        if (!isNaN(quantity) && quantity > 0) {
+            item.quantity = quantity;  // Update the quantity
+            updateCart();  // Update cart UI
+        } else {
+            alert('Jumlah tidak valid.');
+        }
     }
 
     // Checkout functionality
