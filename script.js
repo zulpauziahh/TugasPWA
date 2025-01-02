@@ -1,73 +1,97 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+    // Slider functionality
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Cart functionality
+    const cartItems = document.getElementById('cart-items');
+    const totalPriceEl = document.getElementById('total-price');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartIcon = document.getElementById('cart-icon');
     const cartCount = document.getElementById('cart-count');
-    const totalPriceElement = document.getElementById('total-price');
-    const checkoutButton = document.getElementById('checkout');
-    const cartItemsList = document.getElementById('cart-items');
-
     let cart = [];
-    let totalPrice = 0;
 
-    // Function to update the cart display
+    // Add product to cart
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseInt(button.getAttribute('data-price'), 10);
+
+            // Check if the product is already in the cart
+            const existingProduct = cart.find(item => item.name === name);
+            if (existingProduct) {
+                // If product exists, increase quantity
+                existingProduct.quantity += 1;
+            } else {
+                // Otherwise, add new product
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCart();
+        });
+    });
+
+    // Update the cart UI and total price
     function updateCart() {
-        // Update the cart icon count
-        cartCount.textContent = cart.length;
+        cartItems.innerHTML = '';  // Clear current cart list
+        let total = 0;
 
-        // Update the total price
-        totalPriceElement.textContent = totalPrice.toLocaleString();
-
-        // Update cart items in the list
-        cartItemsList.innerHTML = '';
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price.toLocaleString()} IDR`;
-            cartItemsList.appendChild(li);
+            li.textContent = `${item.name} - ${item.quantity} x ${item.price.toLocaleString('id-ID')} IDR`;
+            cartItems.appendChild(li);
+            total += item.price * item.quantity;
         });
 
-        // Enable/Disable checkout button
-        if (cart.length > 0) {
-            checkoutButton.disabled = false;
+        totalPriceEl.textContent = total.toLocaleString('id-ID');  // Format total price as IDR
+
+        // Update cart icon with item count
+        cartCount.textContent = cart.length;
+        document.getElementById('checkout').disabled = cart.length === 0;  // Disable checkout button if cart is empty
+    }
+
+    // Checkout functionality
+    document.getElementById('checkout').addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Keranjang Anda kosong!');
         } else {
-            checkoutButton.disabled = true;
+            alert(`Total Harga: ${totalPriceEl.textContent} IDR\nTerima kasih sudah berbelanja!`);
+            cart = [];  // Clear the cart after checkout
+            updateCart();  // Update cart UI
         }
-    }
-
-    // Function to add item to the cart
-    function addToCart(name, price) {
-        cart.push({ name, price });
-        totalPrice += price;
-        updateCart();
-    }
-
-    // Add event listeners to "Add to Cart" buttons
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const productName = button.getAttribute('data-name');
-            const productPrice = parseInt(button.getAttribute('data-price'), 10);
-            addToCart(productName, productPrice);
-        });
     });
-
-    // Handle checkout (Just a simple alert for now)
-    checkoutButton.addEventListener('click', function () {
-        alert('Terima kasih telah berbelanja! Total Belanja: ' + totalPrice.toLocaleString() + ' IDR');
-        cart = [];
-        totalPrice = 0;
-        updateCart();
-    });
-
-    // Update cart display initially (in case there's already something in the cart)
-    updateCart();
 
     // Service Worker registration
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')  // Daftar Service Worker
+        navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('Service Worker terdaftar dengan scope:', registration.scope);
+                console.log('Service Worker registered with scope:', registration.scope);
             })
             .catch(error => {
-                console.error('Pendaftaran Service Worker gagal:', error);
+                console.error('Service Worker registration failed:', error);
             });
     }
 });
