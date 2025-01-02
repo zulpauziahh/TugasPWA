@@ -47,14 +47,18 @@ h1 {
     object-fit: cover;
 }
 
+/* Nama Slider yang diperbarui */
 .slide-caption {
     position: absolute;
     bottom: 10%;
     left: 10%;
-    font-size: 2rem;
+    font-size: 3rem; /* Ukuran lebih besar */
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: white; /* Warna putih */
+    text-shadow: none; /* Hilangkan efek bayangan */
+    background: none; /* Menghilangkan latar belakang */
+    padding: 0; /* Tidak ada padding */
+    margin: 0; /* Tidak ada margin */
 }
 
 /* Tombol Slider */
