@@ -63,12 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCart();
     });
 
-    // Like button functionality
-    const likeButton = document.getElementById('like-button');
-    likeButton.addEventListener('click', () => {
-        alert('Terima kasih telah menyukai halaman ini!');
-    });
-
     // Service Worker registration
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
