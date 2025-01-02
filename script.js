@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Slider functionality
     const slides = document.querySelectorAll('.slide');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -24,10 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     prevButton.addEventListener('click', prevSlide);
     nextButton.addEventListener('click', nextSlide);
 
-    // Auto-slide every 5 seconds
     setInterval(nextSlide, 5000);
 
-    // Cart functionality
     const cartItems = document.getElementById('cart-items');
     const totalPriceEl = document.getElementById('total-price');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -35,28 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCount = document.getElementById('cart-count');
     let cart = [];
 
-    // Add product to cart
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
             const name = button.getAttribute('data-name');
             const price = parseInt(button.getAttribute('data-price'), 10);
 
-            // Check if the product is already in the cart
             const existingProduct = cart.find(item => item.name === name);
             if (existingProduct) {
-                // If product exists, increase quantity
                 existingProduct.quantity += 1;
             } else {
-                // Otherwise, add new product
                 cart.push({ name, price, quantity: 1 });
             }
             updateCart();
         });
     });
 
-    // Update the cart UI and total price
     function updateCart() {
-        cartItems.innerHTML = '';  // Clear current cart list
+        cartItems.innerHTML = '';
         let total = 0;
 
         cart.forEach(item => {
@@ -66,25 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
             total += item.price * item.quantity;
         });
 
-        totalPriceEl.textContent = total.toLocaleString('id-ID');  // Format total price as IDR
-
-        // Update cart icon with item count
+        totalPriceEl.textContent = total.toLocaleString('id-ID');
         cartCount.textContent = cart.length;
-        document.getElementById('checkout').disabled = cart.length === 0;  // Disable checkout button if cart is empty
+        document.getElementById('checkout').disabled = cart.length === 0;
     }
 
-    // Checkout functionality
     document.getElementById('checkout').addEventListener('click', () => {
         if (cart.length === 0) {
             alert('Keranjang Anda kosong!');
         } else {
             alert(`Total Harga: ${totalPriceEl.textContent} IDR\nTerima kasih sudah berbelanja!`);
-            cart = [];  // Clear the cart after checkout
-            updateCart();  // Update cart UI
+            cart = [];
+            updateCart();
         }
     });
 
-    // Service Worker registration
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
