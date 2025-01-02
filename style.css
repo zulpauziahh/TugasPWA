@@ -58,7 +58,8 @@ header h1 {
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 1.2rem;
+    font-size: 50px; /* Calibri font size */
+    font-family: Calibri, sans-serif;
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -144,6 +145,12 @@ main {
     margin-bottom: 15px;
 }
 
+.product-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
 .add-to-cart {
     background: #ff9800;
     color: white;
@@ -186,12 +193,26 @@ main {
     text-align: left;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    background-color: #2f3640;
+/* Cart Icon */
+.cart-icon {
+    position: relative;
+    font-size: 2rem;
+    color: #333;
+}
+
+.cart-icon:before {
+    content: '\f07a'; /* Font Awesome cart icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.cart-icon .item-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
     color: white;
-    padding: 15px 0;
-    margin-top: 50px;
     font-size: 1rem;
+    padding: 3px 8px;
+    border-radius: 50%;
 }
