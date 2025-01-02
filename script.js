@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItems = document.getElementById('cart-items');
     const totalPriceEl = document.getElementById('total-price');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
     let cart = [];
 
     addToCartButtons.forEach(button => {
@@ -55,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         totalPriceEl.textContent = total.toLocaleString('id-ID');  // Format total price as IDR
+
+        // Update cart icon with item count
+        cartCount.textContent = cart.length;
     }
 
     document.getElementById('checkout').addEventListener('click', () => {
