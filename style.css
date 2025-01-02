@@ -58,7 +58,7 @@ header h1 {
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 50px; /* Calibri font size */
+    font-size: 50px;
     font-family: Calibri, sans-serif;
     padding: 10px 20px;
     border-radius: 5px;
@@ -142,6 +142,7 @@ main {
     color: #e67e22;
     font-size: 1.2rem;
     font-weight: bold;
+    margin-top: 10px; /* Moved below product name */
     margin-bottom: 15px;
 }
 
@@ -194,19 +195,31 @@ main {
 }
 
 /* Cart Icon */
-.cart-icon {
+#cart-icon {
     position: relative;
     font-size: 2rem;
     color: #333;
+    cursor: pointer;
 }
 
-.cart-icon:before {
+#cart-icon:before {
     content: '\f07a'; /* Font Awesome cart icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 
-.cart-icon .item-count {
+#cart-icon .item-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    padding: 3px 8px;
+    border-radius: 50%;
+}
+
+.cart-count {
     position: absolute;
     top: -5px;
     right: -5px;
