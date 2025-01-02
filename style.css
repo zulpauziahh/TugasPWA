@@ -111,11 +111,12 @@ h1 {
     width: 220px;
     text-align: center;
     padding: 15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .product img {
@@ -157,6 +158,30 @@ h1 {
 
 .add-to-cart:hover {
     background-color: #1e88e5;
+}
+
+/* Tombol Hapus dan Edit di Cart */
+.remove-item, .edit-item {
+    background-color: #ff5252;  /* Merah untuk tombol hapus */
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: #d32f2f;
+}
+
+.edit-item {
+    background-color: #ffa000;  /* Kuning untuk tombol edit */
+}
+
+.edit-item:hover {
+    background-color: #ff8f00;
 }
 
 /* Checkout dan Keranjang */
@@ -209,7 +234,7 @@ h1 {
     color: white;
     border-radius: 50%;
     padding: 5px 10px;
-    font-size: 1rem;
+    font-size: 1.2rem; /* Menyesuaikan dengan ukuran font header */
     vertical-align: middle;
 }
 
@@ -241,7 +266,7 @@ footer {
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .slider-button {
@@ -258,5 +283,21 @@ footer {
 
     .add-to-cart {
         font-size: 0.9rem;
+    }
+
+    /* Header padding sedikit lebih besar */
+    header {
+        padding: 15px;
+    }
+
+    /* Tombol Checkout untuk Mobile */
+    #checkout {
+        font-size: 1rem;
+    }
+
+    /* Footer di Mobile */
+    footer {
+        padding: 20px;
+        font-size: 1rem;
     }
 }
