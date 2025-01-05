@@ -7,7 +7,7 @@ const urlsToCache = [
     './manifest.json',
     'https://allofresh.id/blog/wp-content/uploads/2023/04/resep-es-timun-suri-1-1-1.jpg',
     'https://www.wandercooks.com/wp-content/uploads/2021/04/malaysian-pulled-tea-teh-tarik-2.jpg',
-    'https://drive.google.com/file/d/11A6XPkMZ76o2p93ms_nHGSQ9LKj6Cu8I/view?usp=drivesdk', 
+    'https://drive.google.com/file/d/11A6XPkMZ76o2p93ms_nHGSQ9LKj6Cu8I/view?usp=drivesdk.jpg', 
     'https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/02/23/kopi-rempah-3400559857.jpg', 
     'https://serikatnews.com/wp-content/uploads/2023/01/Bajigur.jpg',
     'https://assets.ladiestory.id/gallery/171246131220600903-ilustrasi.jpg',
